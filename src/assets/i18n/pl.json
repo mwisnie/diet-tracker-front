@@ -1,5 +1,11 @@
 {
-  "HOME": {
-    "TITLE": "Polish works"
+  "NAVBAR": {
+    "ABOUT": "Jak to działa?",
+    "PRODUCTS": "Baza Produktów",
+    "DIET": "Moja Dieta",
+    "STATISTICS": "Statystyki",
+    "LOGIN": "Logowanie",
+    "SIGNUP": "Rejestracja",
+    "ACCOUNT": "Moje konto"
   }
 }

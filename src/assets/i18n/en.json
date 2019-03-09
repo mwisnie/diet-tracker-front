@@ -1,5 +1,11 @@
 {
-  "HOME": {
-    "TITLE": "English works"
+  "NAVBAR": {
+    "ABOUT": "About",
+    "PRODUCTS": "Products",
+    "DIET": "My Diet",
+    "STATISTICS": "Statistics",
+    "LOGIN": "Login",
+    "SIGNUP": "Sign Up",
+    "ACCOUNT": "My Account"
   }
 }

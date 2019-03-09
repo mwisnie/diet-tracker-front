@@ -1,0 +1,20 @@
+<hr>
+<p>
+  test works! / TODO - delete
+</p>
+Authenticated: {{ isAuthenticated }}
+<br>
+User: {{ user != null ? user.username + user.password : 'not logged in' }}
+<br>
+<button (click)="mockLogin()">Login</button>
+<button (click)="logout()">Logout</button>
+<br>
+<div>
+  <label>
+        <select #langSelect (change)="translate.use(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
+  </label>
+</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<button (click)="showSnackbar()">Show snackbar</button>

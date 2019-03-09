@@ -1,0 +1,48 @@
+<!-- menu button on screens with max width of 600 px, else toolbar -->
+<mat-toolbar color="primary">
+
+  <div fxHide.gt-xs>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  
+  <div fxFlex fxLayout fxHide.xs>
+    <ul fxLayout fxLayoutGap="14px" class="navigation-items">
+      <li>
+        <a routerLink="/about"> {{ 'NAVBAR.ABOUT' | translate }} </a> 
+      </li>
+      <li>
+        <a routerLink="/products"> {{ 'NAVBAR.PRODUCTS' | translate }} </a>
+      </li>
+      <li>
+        <a routerLink="/diet"> {{ 'NAVBAR.DIET' | translate }} </a>
+      </li>
+      <li>
+        <a routerLink="/statistics"> {{ 'NAVBAR.STATISTICS' | translate }} </a>
+      </li>
+    </ul>
+  </div>
+  <div fxFlex fxLayout fxHide.xs fxLayoutAlign="flex-end">
+    <ul fxLayout fxLayoutGap="14px" class="navigation-items">
+      <li>
+        <a routerLink="/login"> {{ 'NAVBAR.LOGIN' | translate }} </a>
+      </li>
+      <li>
+        <a routerLink="/signup"> {{ 'NAVBAR.SIGNUP' | translate }} </a>
+      </li>
+      <li>
+        <a routerLink [matMenuTriggerFor]="accountMenu">          
+          {{ 'NAVBAR.ACCOUNT' | translate }}
+        </a>
+      </li>
+    </ul>
+
+    <mat-menu #accountMenu="matMenu">
+      <button mat-menu-item routerLink="/account"> Account </button>
+      <button mat-menu-item> Logout </button>
+    </mat-menu>
+
+  </div>
+
+</mat-toolbar>
