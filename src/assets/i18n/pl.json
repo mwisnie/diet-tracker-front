@@ -1,11 +1,13 @@
 {
   "NAVBAR": {
-    "ABOUT": "Jak to działa?",
-    "PRODUCTS": "Baza Produktów",
-    "DIET": "Moja Dieta",
+    "PRODUCTS": "Produkty",
+    "DIET": "Dieta",
     "STATISTICS": "Statystyki",
     "LOGIN": "Logowanie",
     "SIGNUP": "Rejestracja",
-    "ACCOUNT": "Moje konto"
+    "ACCOUNT": "Konto",
+    "POLISH": "Polski",
+    "ENGLISH": "Angielski",
+    "LOGOUT": "Wyloguj"
   }
 }

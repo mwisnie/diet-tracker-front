@@ -8,7 +8,7 @@ import { AccountComponent } from './components/account/account.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent },
+  { path: 'home', component: AboutComponent },
   { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
   { path: 'diet', component: DietComponent, canActivate: [AuthGuard] },
   { path: 'statistics', component: StatsComponent, canActivate: [AuthGuard] },

@@ -8,9 +8,23 @@ a:active {
   color: lightgray;
 }
 
+.title {
+  font-size: 140%;
+}
+
 .navigation-items {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
 
+.navigation-flag {
+  width: 30px;
+}
+
+.navigation-flag-inner {
+  width: 36px;
+  float: right;
+  padding-top: 8px;
+  padding-left: 12px;
+}

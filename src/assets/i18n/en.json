@@ -1,11 +1,13 @@
 {
   "NAVBAR": {
-    "ABOUT": "About",
     "PRODUCTS": "Products",
-    "DIET": "My Diet",
+    "DIET": "Diet",
     "STATISTICS": "Statistics",
     "LOGIN": "Login",
     "SIGNUP": "Sign Up",
-    "ACCOUNT": "My Account"
+    "ACCOUNT": "Account",
+    "POLISH": "Polish",
+    "ENGLISH": "English",
+    "LOGOUT": "Logout"
   }
 }

@@ -8,9 +8,10 @@
   </div>
   
   <div fxFlex fxLayout fxHide.xs>
-    <ul fxLayout fxLayoutGap="14px" class="navigation-items">
+    <ul fxLayout fxLayoutGap="16px" class="navigation-items">
       <li>
-        <a routerLink="/about"> {{ 'NAVBAR.ABOUT' | translate }} </a> 
+        <mat-icon>fastfood</mat-icon>
+        <a routerLink="/home" class="title">Diet Tracker</a>
       </li>
       <li>
         <a routerLink="/products"> {{ 'NAVBAR.PRODUCTS' | translate }} </a>
@@ -21,28 +22,41 @@
       <li>
         <a routerLink="/statistics"> {{ 'NAVBAR.STATISTICS' | translate }} </a>
       </li>
+      <li>
+        <a routerLink="/account"> {{ 'NAVBAR.ACCOUNT' | translate }} </a>
+      </li>
     </ul>
   </div>
+
   <div fxFlex fxLayout fxHide.xs fxLayoutAlign="flex-end">
-    <ul fxLayout fxLayoutGap="14px" class="navigation-items">
-      <li>
+    <ul fxLayout fxLayoutGap="16px" class="navigation-items">
+      <li *ngIf="!isAuthenticated">
         <a routerLink="/login"> {{ 'NAVBAR.LOGIN' | translate }} </a>
       </li>
-      <li>
+      <li *ngIf="!isAuthenticated">
         <a routerLink="/signup"> {{ 'NAVBAR.SIGNUP' | translate }} </a>
       </li>
+      <li *ngIf="isAuthenticated">
+        <a routerLink (click)="logout()"> {{ 'NAVBAR.LOGOUT' | translate }} </a>
+      </li>
       <li>
-        <a routerLink [matMenuTriggerFor]="accountMenu">          
-          {{ 'NAVBAR.ACCOUNT' | translate }}
-        </a>
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="languageMenu">
+            <img *ngIf="this.translate.currentLang === 'pl'" src="../../../assets/images/pl.svg" alt="language" class="navigation-flag">
+            <img *ngIf="this.translate.currentLang === 'en'" src="../../../assets/images/en.svg" alt="language" class="navigation-flag">
+        </button>
       </li>
     </ul>
 
-    <mat-menu #accountMenu="matMenu">
-      <button mat-menu-item routerLink="/account"> Account </button>
-      <button mat-menu-item> Logout </button>
-    </mat-menu>
-
+    <mat-menu #languageMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="selectLang('pl')"> 
+          <span> {{ 'NAVBAR.POLISH' | translate }} </span> 
+          <img src="../../../assets/images/pl.svg" alt="language" class="navigation-flag-inner" >
+        </button>
+        <button mat-menu-item (click)="selectLang('en')"> 
+          <span> {{ 'NAVBAR.ENGLISH' | translate }} </span>
+          <img src="../../../assets/images/en.svg" alt="language" class="navigation-flag-inner">
+        </button>
+      </mat-menu>
   </div>
 
 </mat-toolbar>

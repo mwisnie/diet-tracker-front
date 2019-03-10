@@ -22,8 +22,7 @@ export class TestComponent implements OnInit {
   private isLoadingSubscr: Subscription;
 
   constructor(private authService: AuthService,
-    public translate: TranslateService,
-    private uiService: UIService) { }
+        private uiService: UIService) { }
 
   ngOnInit() {
     this.isAuthenticatedSubscr = this.authService.isAuthenticatedSubj.subscribe(isAuth => {
