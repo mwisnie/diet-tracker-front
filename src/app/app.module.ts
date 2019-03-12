@@ -20,6 +20,8 @@ import { AboutComponent } from './components/about/about.component';
 import { AuthModule } from './auth/auth.module';
 import { UIService } from './shared/ui.service';
 import { TestComponent } from './test/test.component';
+import { reducers } from './app.reducer';
+import { StoreModule } from '@ngrx/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -52,7 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     MaterialsModule,
     FlexLayoutModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot(reducers)
   ],
   providers: [
     AuthService,

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { State, Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
+
+import * as fromRoot from '../app.reducer';
 import { AuthService } from '../auth/auth.service';
-import { User } from '../auth/user.model';
-import { Subscription } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
 import { UIService } from '../shared/ui.service';
 
 // TODO: delete when unnecessary
@@ -14,20 +15,19 @@ import { UIService } from '../shared/ui.service';
 })
 export class TestComponent implements OnInit {
 
-  private isAuthenticated = false;
+  private isAuthenticated$: Observable<boolean>;
   private user = null;
   private isLoading = false;
-  private isAuthenticatedSubscr: Subscription;
   private userSubscr: Subscription;
   private isLoadingSubscr: Subscription;
 
   constructor(private authService: AuthService,
-        private uiService: UIService) { }
+        private uiService: UIService,
+        private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
-    this.isAuthenticatedSubscr = this.authService.isAuthenticatedSubj.subscribe(isAuth => {
-      this.isAuthenticated = isAuth;
-    });
+    this.isAuthenticated$ = this.store.select(fromRoot.getIsAuthenticated);
+
     this.userSubscr = this.authService.userSubj.subscribe(user => {
       this.user = user;
     });

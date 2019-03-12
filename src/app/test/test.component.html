@@ -2,7 +2,7 @@
 <p>
   test works! / TODO - delete
 </p>
-Authenticated: {{ isAuthenticated }}
+Authenticated: {{ isAuthenticated$ | async}}
 <br>
 User: {{ user != null ? user.username + user.password : 'not logged in' }}
 <br>

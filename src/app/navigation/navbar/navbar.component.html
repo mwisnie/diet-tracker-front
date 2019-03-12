@@ -30,13 +30,13 @@
 
   <div fxFlex fxLayout fxHide.xs fxLayoutAlign="flex-end">
     <ul fxLayout fxLayoutGap="16px" class="navigation-items">
-      <li *ngIf="!isAuthenticated">
+      <li *ngIf="!(isAuthenticated$ | async)">
         <a routerLink="/login"> {{ 'NAVBAR.LOGIN' | translate }} </a>
       </li>
-      <li *ngIf="!isAuthenticated">
+      <li *ngIf="!(isAuthenticated$ | async)">
         <a routerLink="/signup"> {{ 'NAVBAR.SIGNUP' | translate }} </a>
       </li>
-      <li *ngIf="isAuthenticated">
+      <li *ngIf="isAuthenticated$ | async">
         <a routerLink (click)="logout()"> {{ 'NAVBAR.LOGOUT' | translate }} </a>
       </li>
       <li>

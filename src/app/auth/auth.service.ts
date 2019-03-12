@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Subject } from 'rxjs';
 
+import * as fromRoot from '../app.reducer';
 import { UIService } from '../shared/ui.service';
 import { AuthData } from './auth-data.model';
+import * as authActions from './auth.actions';
 import { User } from './user.model';
 
 @Injectable({
@@ -11,11 +14,11 @@ import { User } from './user.model';
 })
 export class AuthService {
 
-  isAuthenticatedSubj = new BehaviorSubject<boolean>(false);
   userSubj = new Subject<User>();
 
   constructor(private router: Router,
-              private uiService: UIService) { }
+              private uiService: UIService,
+              private store: Store<fromRoot.State>) { }
 
   login(authData: AuthData): void {
     this.uiService.isLoadingSubj.next(true);
@@ -26,13 +29,13 @@ export class AuthService {
     // set isLoading to false
 
     // right now, mock login
-    this.isAuthenticatedSubj.next(true);
+    this.store.dispatch(new authActions.SetAuthenticated());
     this.userSubj.next(new User('user', 'user'));
     setTimeout(() => this.uiService.isLoadingSubj.next(false), 3000);
   }
 
   logout(): void {
-    this.isAuthenticatedSubj.next(false);
+    this.store.dispatch(new authActions.SetUnauthenticated());
     this.userSubj.next(null);
   }
 
