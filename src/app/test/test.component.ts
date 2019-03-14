@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import * as fromRoot from '../app.reducer';
 import { AuthService } from '../auth/auth.service';
 import { UIService } from '../shared/ui.service';
+import { User } from '../auth/user.model';
 
 // TODO: delete when unnecessary
 
@@ -16,10 +17,8 @@ import { UIService } from '../shared/ui.service';
 export class TestComponent implements OnInit {
 
   private isAuthenticated$: Observable<boolean>;
-  private user = null;
-  private isLoading = false;
-  private userSubscr: Subscription;
-  private isLoadingSubscr: Subscription;
+  private isLoading$: Observable<boolean>;
+  private user$: Observable<User>;
 
   constructor(private authService: AuthService,
         private uiService: UIService,
@@ -27,13 +26,9 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated$ = this.store.select(fromRoot.getIsAuthenticated);
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+    this.user$ = this.store.select(fromRoot.getUser);
 
-    this.userSubscr = this.authService.userSubj.subscribe(user => {
-      this.user = user;
-    });
-    this.isLoadingSubscr = this.uiService.isLoadingSubj.subscribe(isLoading => {
-      this.isLoading = isLoading;
-    });
   }
 
   mockLogin() {

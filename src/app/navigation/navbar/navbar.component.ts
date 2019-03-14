@@ -15,9 +15,9 @@ export class NavbarComponent implements OnInit {
 
   isAuthenticated$: Observable<boolean>;
 
-  constructor(private authService: AuthService,
+  constructor(private store: Store<fromRoot.State>,
               private translate: TranslateService,
-              private store: Store<fromRoot.State>) { }
+              private authService: AuthService) {}
 
   ngOnInit() {
     this.isAuthenticated$ = this.store.select(fromRoot.getIsAuthenticated);

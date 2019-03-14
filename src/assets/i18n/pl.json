@@ -9,5 +9,14 @@
     "POLISH": "Polski",
     "ENGLISH": "Angielski",
     "LOGOUT": "Wyloguj"
+  },
+  "LOGIN": {
+    "USERNAME": "Nazwa użytkownika",
+    "USERNAME_HINT": "Podaj nazwę użytkownika",
+    "USERNAME_ERROR": "Brak nazwy użytkownika",
+    "PASSWORD": "Hasło",
+    "PASSWORD_HINT": "Podaj hasło",
+    "PASSWORD_ERROR": "Brak hasła",
+    "SUBMIT_BUTTON": "Zaloguj"
   }
 }

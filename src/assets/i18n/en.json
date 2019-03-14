@@ -9,5 +9,14 @@
     "POLISH": "Polish",
     "ENGLISH": "English",
     "LOGOUT": "Logout"
+  },
+  "LOGIN": {
+    "USERNAME": "Username",
+    "USERNAME_HINT": "Enter your username",
+    "USERNAME_ERROR": "Missing username",
+    "PASSWORD": "Password",
+    "PASSWORD_HINT": "Enter your password",
+    "PASSWORD_ERROR": "Missing password",
+    "SUBMIT_BUTTON": "Log in"
   }
 }
