@@ -13,10 +13,26 @@
   "LOGIN": {
     "USERNAME": "Nazwa użytkownika",
     "USERNAME_HINT": "Podaj nazwę użytkownika",
-    "USERNAME_ERROR": "Brak nazwy użytkownika",
+    "USERNAME_ERROR": "Należy podać nazwę użytkownika",
     "PASSWORD": "Hasło",
     "PASSWORD_HINT": "Podaj hasło",
-    "PASSWORD_ERROR": "Brak hasła",
+    "PASSWORD_ERROR": "Należy podać hasło",
     "SUBMIT_BUTTON": "Zaloguj"
+  },
+  "SIGNUP": {
+    "USERNAME": "Nazwa użytkownika",
+    "USERNAME_HINT": "Podaj nazwę użytkownika",
+    "USERNAME_ERROR_REQUIRED": "Należy podać nazwę użytkownika",
+    "USERNAME_ERROR_SIZE": "Nazwa użytkownika musi mieć przynajmniej 3 znaki",
+    "EMAIL": "Email",
+    "EMAIL_HINT": "Podaj adres email",
+    "EMAIL_ERROR": "Należy podać poprawny adres email",
+    "PASSWORD": "Hasło",
+    "PASSWORD_HINT": "Podaj hasło",
+    "PASSWORD_ERROR": "Należy podać hasło",
+    "PASSWORD_CONFIRM": "Potwierdź hasło",
+    "PASSWORD_CONFIRM_HINT": "Potwierdź hasło",
+    "PASSWORD_CONFIRM_ERROR": "Hasła nie odpowiadają sobie",
+    "SUBMIT_BUTTON": "Zarejestruj się"
   }
 }

@@ -7,7 +7,6 @@ import { State } from 'src/app/app.reducer';
 import * as fromRoot from '../../app.reducer';
 import { AuthData } from '../auth-data.model';
 import { AuthService } from '../auth.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
   isLoading$: Observable<boolean>;
+  loginForm: FormGroup;
 
   constructor(private store: Store<fromRoot.State>,
               private authService: AuthService) { }
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
         });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const authData: AuthData = {
       username: this.loginForm.value.username,
       password: this.loginForm.value.password

@@ -1,3 +1,71 @@
-<p>
-  signup works!
-</p>
+<section>
+  <mat-card>
+
+    <form [formGroup]="signupForm" 
+          (submit)="onSubmit()"
+          fxLayout="column" 
+          fxLayoutAlign="center center" 
+          fxLayoutGap="14px">
+
+      <mat-form-field>
+        <input formControlName="username"
+                matInput 
+                type="text" 
+                placeholder="{{ 'SIGNUP.USERNAME' | translate }}">
+        <mat-hint> {{ 'SIGNUP.USERNAME_HINT' | translate }} </mat-hint>
+        <mat-error *ngIf="signupForm.get('username').hasError('required')">
+          {{ 'SIGNUP.USERNAME_ERROR_REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signupForm.get('username').hasError('minlength')"> 
+          {{ 'SIGNUP.USERNAME_ERROR_SIZE' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="email"
+                matInput
+                type="email"
+                placeholder="{{ 'SIGNUP.EMAIL' | translate }}">
+        <mat-hint> {{ 'SIGNUP.EMAIL_HINT' | translate }} </mat-hint>
+        <mat-error> {{ 'SIGNUP.EMAIL_ERROR' | translate }} </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input formControlName="password" 
+                matInput 
+                type="password" 
+                placeholder="{{ 'SIGNUP.PASSWORD' | translate }}">
+        <mat-hint> {{ 'SIGNUP.PASSWORD_HINT'  | translate }} </mat-hint>
+        <mat-error *ngIf="signupForm.get('password').hasError('required')">
+          {{ 'SIGNUP.PASSWORD_ERROR_REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signupForm.get('password').hasError('minlength')">
+          {{ 'SIGNUP.PASSWORD_ERROR_SIZE' | translate }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input formControlName="passwordConfirm" 
+                matInput type="password"
+                placeholder="{{ 'SIGNUP.PASSWORD_CONFIRM' | translate }}"
+                [errorStateMatcher]="passwordConfirmErrorMatcher">
+        <mat-hint> {{ 'SIGNUP.PASSWORD_CONFIRM_HINT'  | translate }} </mat-hint>
+        <mat-error *ngIf="signupForm.hasError('notSame')"> 
+          {{ 'SIGNUP.PASSWORD_CONFIRM_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+    <button *ngIf="!(isLoading$ | async)" 
+            mat-raised-button 
+            color="primary"
+            type="submit" 
+            [disabled]="signupForm.invalid"> 
+      {{ 'SIGNUP.SUBMIT_BUTTON' | translate }}
+    </button>
+    <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
+  
+
+    </form>
+    
+  </mat-card>
+</section>

@@ -12,11 +12,28 @@
   },
   "LOGIN": {
     "USERNAME": "Username",
-    "USERNAME_HINT": "Enter your username",
+    "USERNAME_HINT": "Please enter your username",
     "USERNAME_ERROR": "Missing username",
     "PASSWORD": "Password",
-    "PASSWORD_HINT": "Enter your password",
+    "PASSWORD_HINT": "Please enter your password",
     "PASSWORD_ERROR": "Missing password",
     "SUBMIT_BUTTON": "Log in"
+  },
+  "SIGNUP": {
+    "USERNAME": "Username",
+    "USERNAME_HINT": "Enter your username",
+    "USERNAME_ERROR_REQUIRED": "Missing username",
+    "USERNAME_ERROR_SIZE": "Username needs to be at least 3 characters long",
+    "EMAIL": "Email",
+    "EMAIL_HINT": "Please enter a valid email",
+    "EMAIL_ERROR": "Invalid or missing email",
+    "PASSWORD": "Password",
+    "PASSWORD_HINT": "Enter your password",
+    "PASSWORD_ERROR_REQUIRED": "Missing password",
+    "PASSWORD_ERROR_SIZE": "Password needs to be at least 6 characters long",
+    "PASSWORD_CONFIRM": "Confirm password",
+    "PASSWORD_CONFIRM_HINT": "Please confirm your password",
+    "PASSWORD_CONFIRM_ERROR": "Passwords do not match",
+    "SUBMIT_BUTTON": "Sign up"
   }
 }
